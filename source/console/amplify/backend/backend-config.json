@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"dlts69a165fe": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

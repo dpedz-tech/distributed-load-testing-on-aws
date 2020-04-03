@@ -43,6 +43,7 @@ mkdir -p $build_dist_dir
 [ -e $build_dist_dir ] && rm -r $build_dist_dir
 mkdir -p $template_dist_dir $build_dist_dir
 
+echo $template_dir
 echo "------------------------------------------------------------------------------"
 echo "CloudFormation Template"
 echo "------------------------------------------------------------------------------"

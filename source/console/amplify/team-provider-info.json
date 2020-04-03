@@ -1,0 +1,20 @@
+{
+    "local": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-dlts-local-204340-authRole",
+            "UnauthRoleArn": "arn:aws:iam::074395775351:role/amplify-dlts-local-204340-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::074395775351:role/amplify-dlts-local-204340-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-dlts-local-204340-deployment",
+            "UnauthRoleName": "amplify-dlts-local-204340-unauthRole",
+            "StackName": "amplify-dlts-local-204340",
+            "StackId": "arn:aws:cloudformation:us-east-2:074395775351:stack/amplify-dlts-local-204340/8cbb4970-754c-11ea-8110-060a55e3d44e",
+            "AmplifyAppId": "det57gorotekh"
+        },
+        "categories": {
+            "auth": {
+                "dlts69a165fe": {}
+            }
+        }
+    }
+}

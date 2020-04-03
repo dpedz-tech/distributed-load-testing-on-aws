@@ -30,15 +30,18 @@ import {
 //Amplify
 import Amplify, { Auth } from 'aws-amplify';
 import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react';
-//import awsConfig from './aws_config'
+// import awsConfig from './aws_config'
 
 //Components
 import Dashboard from './Components/Dashboard/Dashboard.js';
 import Create from './Components/Create/Create.js';
 import Details from './Components/Details/Details.js';
+import Create_Selenium from './Components/Create-Selenium/Create.js';
 
-declare var awsConfig;
-Amplify.configure(awsConfig);
+import awsconfig from "./aws-exports";
+
+Amplify.configure(awsconfig);
+// Amplify.configure();
 //Amplify.Logger.LOG_LEVEL = 'DEBUG';
 
 const loginTheme = {
@@ -105,7 +108,17 @@ class App extends React.Component {
                     }}
                     className="nav-link"
               >
-                <FontAwesomeIcon id="icon" icon={faPlusSquare} /> Create Test
+                <FontAwesomeIcon id="icon" icon={faPlusSquare} /> Create HTTP Test
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link to= {{
+                    pathname:"/create_selenium",
+                    state:{ data:{}}
+                    }}
+                    className="nav-link"
+              >
+                <FontAwesomeIcon id="icon" icon={faPlusSquare} /> Create Selenium Test
               </Link>
             </NavItem>
             </Nav>
@@ -124,6 +137,7 @@ class App extends React.Component {
               <Route path="/" exact component={Dashboard} />
               <Route path="/dashboard" exact component={Dashboard} />
               <Route path="/create/" component={Create} />
+              <Route path="/create_selenium/" component={Create_Selenium} />
               <Route path="/details/" component={Details} />
               <Route component={this.noMatch} />
             </Switch>

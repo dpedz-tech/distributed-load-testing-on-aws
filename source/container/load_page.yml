@@ -1,0 +1,55 @@
+execution:
+- executor: selenium
+  scenario: open_page
+  concurrency: 20
+  ramp-up: 2m
+  hold-for: 2m
+
+scenarios:
+  open_page:
+    browser: Chrome
+    headless: true
+    timeout: 5s
+    think-time: 3s
+    default-address: http://blazedemo.com
+    requests:
+    - url: /purchase.php
+      actions:
+      - waitByCSS(h2): visible
+      - keysByID(inputName): MyName
+      - clickByCSS(.btn.btn-primary)
+      assert:
+      - contains:
+        - 'Thank you for your purchase today!'
+    - url: /vacation.html
+      actions:
+      - waitByCSS(div.container img): visible
+reporting:
+- module: final-stats
+  summary: true  # overall samples count and percent of failures
+  percentiles: true  # display average times and percentiles
+  summary-labels: true # provides list of sample labels, status, percentage of completed, avg time and errors
+  failed-labels: true  # provides list of sample labels with failures
+  test-duration: true  # provides test duration
+  dump-xml: "/tmp/artifacts/results.xml"
+
+# modules:
+#   selenium:
+#     chromedriver:
+#       version: 80.0.3987.106
+#       download-link: https://chromedriver.storage.googleapis.com/{version}/chromedriver_{arch}.zip
+#     geckodriver:
+#       version: 0.26.0
+#       download-link: https://github.com/mozilla/geckodriver/releases/download/v{version}/geckodriver-v{version}-{arch}.{ext}
+
+services:
+- module: virtual-display
+  width: 1024
+  height: 768
+# - module: monitoring
+#   server-agent:  # collect data from remote server which has ServerAgent running
+#   - address: 192.168.1.3:4444
+#     metrics:
+#     - cpu
+#     - disks
+#     - memory
