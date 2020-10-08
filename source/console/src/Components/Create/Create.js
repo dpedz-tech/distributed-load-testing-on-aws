@@ -254,7 +254,7 @@ class Create extends React.Component {
                                     type="number"
                                     name="taskCount"
                                     id="taskCount"
-                                    max={50}
+                                    max={100}
                                     min={1}
                                     step={1}
                                     required
