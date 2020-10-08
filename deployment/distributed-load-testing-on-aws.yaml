@@ -85,8 +85,8 @@ Metadata:
 Mappings:
   SourceCode:
     General:
-      S3Bucket: dale-load-testing-us-east-2
-      KeyPrefix: /video-on-demand-on-aws/1.0-initial
+      S3Bucket: dale-load-testing
+      KeyPrefix: video-on-demand-on-aws/1.0-initial
   AnonymousData:
     SendAnonymousData:
       Data: Yes
